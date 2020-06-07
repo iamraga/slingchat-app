@@ -1,0 +1,33 @@
+@font-face {
+    src: url(../fonts/Quicksand-SemiBold.ttf);
+    font-family: quicksand;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: quicksand;
+}
+.chat-cont {
+    height: 100vh;
+    background-color: #09f;
+    padding: 30px 20px;
+}
+.chat-window {
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 30px 40px;
+    border-radius: 15px;
+    height: 75vh;
+}
+
+/* responsive CSS */
+@media only screen and (max-width: 768px) {
+    .chat-window {
+        padding: 20px;
+        height: 70vh;
+    }
+    .online-users {
+        display: none;
+    }
+}
