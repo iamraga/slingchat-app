@@ -15,6 +15,7 @@ export default function Chat(props) {
     let [name] = useState(props.location.state.name.trim().replace(/ /g, '').toLowerCase());
     let [displayRoom] = useState(props.location.state.room);
     let [room] = useState(props.location.state.room.trim().replace(/ /g, '').toLowerCase());
+    let [roomType] = useState(props.location.state.roomType);
     let [users, setUsers] = useState([]);
     let [message, setMessage] = useState('');
     let [messages, setMessages] = useState([]);
@@ -60,7 +61,7 @@ export default function Chat(props) {
         <div>
             <Row>
                 <Col className="chat-cont" span={24}>
-                    <ChatHeader room={displayRoom} users={users} />
+                    <ChatHeader room={displayRoom} users={users} roomType={roomType} />
                     <Row>
                         <Col className="chat-window" xs={24} sm={{span: 22, offset: 1}} md={{span:18, offset:2}} lg={{span:14, offset: 1}} xl={{span: 14, offset: 1}}>
                             <Messages messages={messages} name={name} />

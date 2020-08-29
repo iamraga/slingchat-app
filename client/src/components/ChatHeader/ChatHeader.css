@@ -12,8 +12,11 @@
     overflow-y: auto;
     font-size: 16px;
 }
-.view-users {
+.view-users-chat {
     display: none;
+    margin: 0px 10px;
+}
+.view-users-video {
     margin: 0px 10px;
 }
 .ant-modal-content {
@@ -28,7 +31,7 @@
 
 /* responsive CSS */
 @media only screen and (max-width: 768px) {
-    .view-users {
+    .view-users-chat {
         display: inline;
     }
 }

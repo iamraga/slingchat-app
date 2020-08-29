@@ -4,7 +4,7 @@ import './ChatHeader.css';
 
 const { Title } = Typography;
 
-export default function ChatHeader({ room, users }) {
+export default function ChatHeader({ room, users, roomType }) {
 
     let [showModal, setShowModal] = useState(false);
 
@@ -13,8 +13,8 @@ export default function ChatHeader({ room, users }) {
             <Row>
                 <Col style={{textAlign: 'center'}} span={24}>
                     <Title className="room-title">{room}</Title>
-                    <Button className="view-users" onClick={(e) => setShowModal(true)}>{users.length} {(users.length > 1) ? 'users':'user'} online</Button>
-                    <a href="/"><Button danger className="view-users">Leave room</Button></a>
+                    <Button className={`view-users-${roomType}`} onClick={(e) => setShowModal(true)}>{users.length} {(users.length > 1) ? 'users':'user'} online</Button>
+                    <a href="/"><Button danger className={`view-users-${roomType}`}>Leave room</Button></a>
                     <Modal
                         className="modal-users"
                         title="Users online"
@@ -23,7 +23,7 @@ export default function ChatHeader({ room, users }) {
                         onOk={() => setShowModal(false)}
                         onCancel={() => setShowModal(false)}
                         footer={[
-                            <div style={{textAlign: 'center'}}>
+                            <div key="modelDiv" style={{textAlign: 'center'}}>
                                 <Button type="primary" className="modal-okay" key="okay" onClick={() => setShowModal(false)}>
                                     Okay
                                 </Button>
